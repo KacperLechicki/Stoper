@@ -25,6 +25,17 @@ body {
   background: none;
 }
 
+:root {
+  --redColor: tomato;
+  --redDarker: rgb(150, 49, 32);
+  --blueColor: royalblue;
+  --blueDarker: rgb(23, 49, 129);
+  --limeColor: rgb(24, 182, 24);
+  --limeDarker: rgb(27, 129, 27);
+  --mainColor: var(--redColor);
+  --mainDarker: var(--redDarker);
+}
+
 .wrapper {
   position: relative;
   display: flex;
@@ -68,14 +79,14 @@ body {
   transition: color 0.2s;
 }
 .wrapper .info button i:hover {
-  color: tomato;
+  color: var(--mainColor);
 }
 .wrapper .info button:focus {
   outline: 1px solid whitesmoke;
 }
 .wrapper .stopwatch {
   font-size: 6rem;
-  color: tomato;
+  color: var(--mainColor);
 }
 .wrapper .time {
   visibility: hidden;
@@ -98,20 +109,20 @@ body {
   font-size: 1.6rem;
   color: whitesmoke;
   background-color: transparent;
-  border: 2px solid tomato;
+  border: 2px solid var(--mainColor);
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.2s;
 }
 .wrapper .buttons button:hover {
-  background-color: tomato;
+  background-color: var(--mainColor);
   outline: none;
 }
 .wrapper .buttons button:focus {
   outline: 1px solid whitesmoke;
 }
 .wrapper .buttons button:active {
-  background-color: rgb(150, 49, 32);
+  background-color: var(--redDarker);
   box-shadow: inset 4px 4px 2px rgba(0, 0, 0, 0.475);
 }
 .wrapper .buttons .history {
@@ -144,6 +155,97 @@ body {
 .wrapper .listContainer .time-list span {
   margin-left: 10px;
   font-weight: bold;
+}
+.wrapper .colors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 2.1rem;
+  transform: translateX(100px);
+  top: 5rem;
+  margin-top: 18px;
+  height: 120px;
+  width: 33px;
+  opacity: 0;
+}
+.wrapper .colors .color {
+  height: 33px;
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.wrapper .colors .one {
+  background-color: tomato;
+  box-shadow: 0 0 7px tomato;
+  transition: box-shadow 0.2s;
+}
+.wrapper .colors .one:hover {
+  box-shadow: 0 0 12px tomato;
+}
+.wrapper .colors .two {
+  background-color: royalblue;
+  box-shadow: 0 0 7px royalblue;
+  transition: box-shadow 0.2s;
+}
+.wrapper .colors .two:hover {
+  box-shadow: 0 0 12px royalblue;
+}
+.wrapper .colors .three {
+  background-color: lime;
+  box-shadow: 0 0 7px lime;
+  transition: box-shadow 0.2s;
+}
+.wrapper .colors .three:hover {
+  box-shadow: 0 0 12px lime;
+}
+.wrapper .showCircles {
+  -webkit-animation: showCircles 0.8s ease-in forwards;
+          animation: showCircles 0.8s ease-in forwards;
+}
+@-webkit-keyframes showCircles {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes showCircles {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.wrapper .hideCircles {
+  -webkit-animation: hideCircles 0.8s ease-out forwards;
+          animation: hideCircles 0.8s ease-out forwards;
+}
+@-webkit-keyframes hideCircles {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+@keyframes hideCircles {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+  }
 }
 
 .modal-shadow {
@@ -183,18 +285,22 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   background-color: transparent;
-  border: 2px solid tomato;
+  border: 2px solid var(--mainColor);
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.2s;
 }
 .modal-shadow .modal button:hover, .modal-shadow .modal button:focus {
-  background-color: tomato;
+  background-color: var(--mainColor);
   outline: none;
 }
 .modal-shadow .modal button:active {
-  background-color: rgb(150, 49, 32);
+  background-color: var(--redDarker);
   box-shadow: inset 4px 4px 2px rgba(0, 0, 0, 0.475);
+}
+.modal-shadow .modal i,
+.modal-shadow .modal strong {
+  color: var(--mainColor);
 }
 
 .modal-animation {

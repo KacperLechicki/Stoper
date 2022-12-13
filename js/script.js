@@ -7,6 +7,8 @@
 //-----------------------------------------------------
 //-----------------------------------------------------
 
+let root = document.documentElement;
+
 const startBtn = document.querySelector('.start');
 const pauseBtn = document.querySelector('.pause');
 const stopBtn = document.querySelector('.stop');
@@ -17,6 +19,12 @@ const time = document.querySelector('.time');
 const timeList = document.querySelector('.time-list');
 
 const info = document.querySelector('.question');
+const brush = document.querySelector('.brush');
+const colors = document.querySelector('.colors');
+const redColor = document.querySelector('.one');
+const blueColor = document.querySelector('.two');
+const limeColor = document.querySelector('.three');
+
 const modal = document.querySelector('.modal-shadow');
 const closeBtn = document.querySelector('.close');
 
@@ -129,6 +137,39 @@ const hideModal = () => {
 	modal.classList.remove('modal-animation');
 };
 
+//KOLORY
+const handleShowingColors = () => {
+	if (
+		colors.classList.contains('showCircles') ||
+		colors.classList.contains('hideCircles')
+	) {
+		if (colors.classList.contains('showCircles')) {
+			colors.classList.remove('showCircles');
+			colors.classList.add('hideCircles');
+		} else if (colors.classList.contains('hideCircles')) {
+			colors.classList.add('showCircles');
+			colors.classList.remove('hideCircles');
+		}
+	} else {
+		colors.classList.add('showCircles');
+	}
+};
+
+const changeToRed = () => {
+	root.style.setProperty('--mainColor', 'tomato');
+	root.style.setProperty('--redDarker', 'rgb(150, 49, 32)');
+};
+
+const changeToBlue = () => {
+	root.style.setProperty('--mainColor', 'royalblue');
+	root.style.setProperty('--redDarker', 'rgb(23, 49, 129)');
+};
+
+const changeToLime = () => {
+	root.style.setProperty('--mainColor', 'rgb(24, 182, 24)');
+	root.style.setProperty('--redDarker', 'rgb(27, 129, 27)');
+};
+
 //WYWOŁANIA
 //-----------------------------------------------------
 //-----------------------------------------------------
@@ -146,3 +187,9 @@ archiveBtn.addEventListener('click', showArchive);
 //instrukcje
 info.addEventListener('click', showModal);
 closeBtn.addEventListener('click', hideModal);
+
+//kolory
+brush.addEventListener('click', handleShowingColors);
+blueColor.addEventListener('click', changeToBlue);
+redColor.addEventListener('click', changeToRed);
+limeColor.addEventListener('click', changeToLime);

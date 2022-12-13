@@ -1,6 +1,17 @@
 @use 'reset' as *;
 @use 'colors' as colors;
 
+:root {
+	--redColor: tomato;
+	--redDarker: rgb(150, 49, 32);
+	--blueColor: royalblue;
+	--blueDarker: rgb(23, 49, 129);
+	--limeColor: rgb(24, 182, 24);
+	--limeDarker: rgb(27, 129, 27);
+	--mainColor: var(--redColor);
+	--mainDarker: var(--redDarker);
+}
+
 .wrapper {
 	position: relative;
 	display: flex;
@@ -45,7 +56,7 @@
 				transition: color 0.2s;
 
 				&:hover {
-					color: colors.$firstColor;
+					color: var(--mainColor);
 				}
 			}
 
@@ -57,7 +68,7 @@
 
 	.stopwatch {
 		font-size: 6rem;
-		color: colors.$firstColor;
+		color: var(--mainColor);
 	}
 
 	.time {
@@ -82,13 +93,13 @@
 			font-size: 1.6rem;
 			color: colors.$white;
 			background-color: transparent;
-			border: 2px solid colors.$firstColor;
+			border: 2px solid var(--mainColor);
 			border-radius: 8px;
 			cursor: pointer;
 			transition: background-color 0.3s, box-shadow 0.2s;
 
 			&:hover {
-				background-color: colors.$firstColor;
+				background-color: var(--mainColor);
 				outline: none;
 			}
 
@@ -97,7 +108,7 @@
 			}
 
 			&:active {
-				background-color: colors.$firstColor-darker;
+				background-color: var(--redDarker);
 				box-shadow: inset 4px 4px 2px rgba(0, 0, 0, 0.475);
 			}
 		}
@@ -136,6 +147,90 @@
 				margin-left: 10px;
 				font-weight: bold;
 			}
+		}
+	}
+
+	.colors {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: absolute;
+		right: 2.1rem;
+		transform: translateX(100px);
+		top: 5rem;
+		margin-top: 18px;
+		height: 120px;
+		width: 33px;
+		opacity: 0;
+
+		.color {
+			height: 33px;
+			width: 100%;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		.one {
+			background-color: tomato;
+			box-shadow: 0 0 7px tomato;
+			transition: box-shadow 0.2s;
+
+			&:hover {
+				box-shadow: 0 0 12px tomato;
+			}
+		}
+
+		.two {
+			background-color: royalblue;
+			box-shadow: 0 0 7px royalblue;
+			transition: box-shadow 0.2s;
+
+			&:hover {
+				box-shadow: 0 0 12px royalblue;
+			}
+		}
+
+		.three {
+			background-color: lime;
+			box-shadow: 0 0 7px lime;
+			transition: box-shadow 0.2s;
+
+			&:hover {
+				box-shadow: 0 0 12px lime;
+			}
+		}
+	}
+
+	.showCircles {
+		// transform: translateX(0);
+		animation: showCircles 0.8s ease-in forwards;
+	}
+
+	@keyframes showCircles {
+		from {
+			opacity: 0;
+			transform: translateX(100px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.hideCircles {
+		animation: hideCircles 0.8s ease-out forwards;
+	}
+
+	@keyframes hideCircles {
+		from {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		to {
+			opacity: 0;
+			transform: translateX(100px);
 		}
 	}
 }
@@ -179,21 +274,26 @@
 			font-weight: bold;
 			text-transform: uppercase;
 			background-color: transparent;
-			border: 2px solid colors.$firstColor;
+			border: 2px solid var(--mainColor);
 			border-radius: 8px;
 			cursor: pointer;
 			transition: background-color 0.3s, box-shadow 0.2s;
 
 			&:hover,
 			&:focus {
-				background-color: colors.$firstColor;
+				background-color: var(--mainColor);
 				outline: none;
 			}
 
 			&:active {
-				background-color: colors.$firstColor-darker;
+				background-color: var(--redDarker);
 				box-shadow: inset 4px 4px 2px rgba(0, 0, 0, 0.475);
 			}
+		}
+
+		i,
+		strong {
+			color: var(--mainColor);
 		}
 	}
 }
