@@ -71,10 +71,13 @@
 			cursor: pointer;
 			transition: background-color 0.3s, box-shadow 0.2s;
 
-			&:hover,
-			&:focus {
+			&:hover {
 				background-color: colors.$firstColor;
 				outline: none;
+			}
+
+			&:focus {
+				outline: 1px solid colors.$white;
 			}
 
 			&:active {
@@ -93,6 +96,7 @@
 	}
 
 	.time-list {
+		display: none;
 		margin: 5px;
 
 		li {

@@ -86,9 +86,12 @@ body {
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.2s;
 }
-.wrapper .buttons button:hover, .wrapper .buttons button:focus {
+.wrapper .buttons button:hover {
   background-color: tomato;
   outline: none;
+}
+.wrapper .buttons button:focus {
+  outline: 1px solid whitesmoke;
 }
 .wrapper .buttons button:active {
   background-color: rgb(150, 49, 32);
@@ -102,6 +105,7 @@ body {
   font-weight: bold;
 }
 .wrapper .time-list {
+  display: none;
   margin: 5px;
 }
 .wrapper .time-list li {
