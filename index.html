@@ -17,7 +17,33 @@
 <body>
 
     <div class="wrapper">
-        
+        <p class="info"><i class="fas fa-question"></i></p>
+        <h1 class="stoper-title">Stoper</h1>
+        <p class="stopwatch">0:00</p>
+        <p class="time">0:00</p>
+
+        <div class="buttons">
+            <button class="start"><i class="fas fa-play"></i></button>
+            <button class="pause"><i class="fas fa-pause"></i></button>
+            <button class="stop"><i class="fas fa-stop"></i></button>
+            <button class="reset"><i class="fas fa-times"></i></button>
+            <button class="history">Archive</button>
+        </div>
+
+        <ul class="time-list"></ul>
+    </div>
+
+    <div class="modal-shadow">
+        <div class="modal">
+            <h3 class="instruction">Instruction:</h3>
+            <p><i class="fas fa-play"></i> - start</p>
+            <p><i class="fas fa-pause"></i> - pause</p>
+            <p><i class="fas fa-stop"></i> - stop</p>
+            <p><i class="fas fa-times"></i> - delete all (including archive)</p>
+            <p><strong>archive</strong> - zobacz wcześniejsze pomiary</p>
+
+            <button class="close">Close</button>
+        </div>
     </div>
 
     <script src="./js/script.js"></script>
