@@ -67,7 +67,7 @@ body {
 }
 .wrapper .time {
   visibility: hidden;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: whitesmoke;
 }
 .wrapper .buttons {
@@ -110,7 +110,6 @@ body {
   font-weight: bold;
 }
 .wrapper .time-list {
-  display: none;
   margin: 5px;
 }
 .wrapper .time-list li {

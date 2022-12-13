@@ -31,6 +31,8 @@ let countTime;
 let minutes = 0;
 let seconds = 0;
 
+let timesArray = [];
+
 //FUNKCJE
 //-----------------------------------------------------
 //-----------------------------------------------------
@@ -65,6 +67,25 @@ const handlePause = () => {
 	clearInterval(countTime);
 };
 
+//zatrzymanie odliczania, zerowanie stopera, zerowanie zmiennych od minut i sekund
+//zapisywanie czasów różnych od zera do tablicy i wyświetlanie ostatniego czasu
+const handleStop = () => {
+	time.innerHTML = `Ostatni czas: ${stopwatch.textContent}`;
+
+	if (stopwatch !== '0:00') {
+		time.style.visibility = 'visible';
+
+		timesArray.push(stopwatch.textContent);
+	}
+
+	clearInterval(countTime);
+	stopwatch.textContent = '0:00';
+	timeList.textContent = '';
+
+	seconds = 0;
+	minutes = 0;
+};
+
 //INSTRUKCJE
 
 //pokaż instrukcję
@@ -79,15 +100,6 @@ const hideModal = () => {
 	modal.classList.remove('modal-animation');
 };
 
-//pokaż historię pomiarów
-const handleTimeList = () => {
-	if (timeList.style.display === '') {
-		timeList.style.display = 'block';
-	} else {
-		timeList.style.display = '';
-	}
-};
-
 //WYWOŁANIA
 //-----------------------------------------------------
 //-----------------------------------------------------
@@ -98,8 +110,8 @@ const handleTimeList = () => {
 //stoper
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
+stopBtn.addEventListener('click', handleStop);
 
 //instrukcje
 info.addEventListener('click', showModal);
 closeBtn.addEventListener('click', hideModal);
-archiveBtn.addEventListener('click', handleTimeList);
