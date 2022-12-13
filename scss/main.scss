@@ -164,19 +164,19 @@
 			}
 		}
 	}
+}
 
-	.modal-animation {
-		animation: showModal 3s;
+.modal-animation {
+	animation: showModal 1s;
+}
+
+@keyframes showModal {
+	from {
+		opacity: 0;
 	}
 
-	@keyframes showModal {
-		from {
-			opacity: 0;
-		}
-
-		to {
-			opacity: 1;
-		}
+	to {
+		opacity: 1;
 	}
 }
 

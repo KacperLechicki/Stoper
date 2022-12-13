@@ -164,10 +164,12 @@ body {
   background-color: rgb(150, 49, 32);
   box-shadow: inset 4px 4px 2px rgba(0, 0, 0, 0.475);
 }
-.modal-shadow .modal-animation {
-  -webkit-animation: showModal 3s;
-          animation: showModal 3s;
+
+.modal-animation {
+  -webkit-animation: showModal 1s;
+          animation: showModal 1s;
 }
+
 @-webkit-keyframes showModal {
   from {
     opacity: 0;
@@ -176,6 +178,7 @@ body {
     opacity: 1;
   }
 }
+
 @keyframes showModal {
   from {
     opacity: 0;
@@ -184,7 +187,6 @@ body {
     opacity: 1;
   }
 }
-
 @media only screen and (max-width: 576px) {
   .wrapper h1 {
     margin: 5px;

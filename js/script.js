@@ -6,11 +6,13 @@ const closeBtn = document.querySelector('.close');
 
 const showModal = () => {
 	modal.style.display = 'block';
+	modal.classList.add('modal-animation');
 };
 
 const hideModal = () => {
 	modal.style.display = 'none';
+	modal.classList.remove('modal-animation');
 };
 
 info.addEventListener('click', showModal);
-close.addEventListener('click', hideModal);
+closeBtn.addEventListener('click', hideModal);
