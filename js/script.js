@@ -38,8 +38,13 @@ let seconds = 0;
 //-----------------------------------------------------
 //-----------------------------------------------------
 
+//STOPER
+
 //odliczanie
 const handleStart = () => {
+	//czyszczenie interwału, żeby nie wywołać go kilka razy
+	clearInterval(countTime);
+
 	countTime = setInterval(() => {
 		if (seconds < 9) {
 			seconds++;
@@ -54,6 +59,13 @@ const handleStart = () => {
 		}
 	}, 1000);
 };
+
+//pauza odliczania
+const handlePause = () => {
+	clearInterval(countTime);
+};
+
+//INSTRUKCJE
 
 //pokaż instrukcję
 const showModal = () => {
@@ -83,7 +95,11 @@ const handleTimeList = () => {
 //-----------------------------------------------------
 //-----------------------------------------------------
 
+//stoper
 startBtn.addEventListener('click', handleStart);
+pauseBtn.addEventListener('click', handlePause);
+
+//instrukcje
 info.addEventListener('click', showModal);
 closeBtn.addEventListener('click', hideModal);
 archiveBtn.addEventListener('click', handleTimeList);
