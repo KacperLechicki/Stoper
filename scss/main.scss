@@ -15,8 +15,8 @@
 	color: colors.$white;
 	background-image: colors.$stoper-background;
 	border-radius: 12px;
-	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.389);
-	overflow: auto;
+	box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.389);
+	overflow: hidden;
 
 	h1 {
 		margin: 5px;
@@ -28,15 +28,19 @@
 		position: absolute;
 		top: 6px;
 		right: 12px;
-		margin: 5px;
-		padding: 12px;
-		font-size: 2rem;
+		margin: 10px;
+		font-size: 1.6rem;
 		color: colors.$white;
 		cursor: pointer;
-		transition: color 0.2s;
 
-		&:hover {
-			color: colors.$firstColor;
+		i {
+			margin: 0;
+			padding: 8px;
+			transition: color 0.2s;
+
+			&:hover {
+				color: colors.$firstColor;
+			}
 		}
 	}
 
@@ -108,7 +112,7 @@
 
 		.time-list {
 			margin: 5px;
-	
+
 			li {
 				margin: 5px auto;
 				display: flex;
@@ -116,7 +120,7 @@
 				font-size: 1.4rem;
 				color: colors.$white;
 			}
-	
+
 			span {
 				margin-left: 10px;
 				font-weight: bold;

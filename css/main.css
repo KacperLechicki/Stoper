@@ -39,8 +39,8 @@ body {
   color: whitesmoke;
   background-image: linear-gradient(310deg, rgba(12, 13, 26, 0.85), rgba(10, 11, 28, 0.9));
   border-radius: 12px;
-  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.389);
-  overflow: auto;
+  box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.389);
+  overflow: hidden;
 }
 .wrapper h1 {
   margin: 5px;
@@ -51,14 +51,17 @@ body {
   position: absolute;
   top: 6px;
   right: 12px;
-  margin: 5px;
-  padding: 12px;
-  font-size: 2rem;
+  margin: 10px;
+  font-size: 1.6rem;
   color: whitesmoke;
   cursor: pointer;
+}
+.wrapper .info i {
+  margin: 0;
+  padding: 8px;
   transition: color 0.2s;
 }
-.wrapper .info:hover {
+.wrapper .info i:hover {
   color: tomato;
 }
 .wrapper .stopwatch {
