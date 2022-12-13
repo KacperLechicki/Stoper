@@ -1,5 +1,8 @@
 $black: black;
 $white: whitesmoke;
 
+$firstColor: tomato;
+$firstColor-darker: rgb(150, 49, 32);
+
 $background: radial-gradient(circle at center, #1b2845 40%, #162538);
-$stoper-background: linear-gradient(310deg, rgb(12, 13, 26), rgb(10, 11, 28));
+$stoper-background: linear-gradient(310deg, rgb(12, 13, 26, 0.85), rgb(10, 11, 28, 0.9));
