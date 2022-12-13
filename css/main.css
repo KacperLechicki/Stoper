@@ -52,17 +52,26 @@ body {
   top: 6px;
   right: 12px;
   margin: 10px;
+}
+.wrapper .info button {
   font-size: 1.6rem;
   color: whitesmoke;
+  background: none;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  outline: none;
 }
-.wrapper .info i {
+.wrapper .info button i {
   margin: 0;
   padding: 8px;
   transition: color 0.2s;
 }
-.wrapper .info i:hover {
+.wrapper .info button i:hover {
   color: tomato;
+}
+.wrapper .info button:focus {
+  outline: 1px solid whitesmoke;
 }
 .wrapper .stopwatch {
   font-size: 6rem;

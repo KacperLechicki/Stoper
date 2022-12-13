@@ -16,7 +16,7 @@ const archiveBtn = document.querySelector('.history');
 const time = document.querySelector('.time');
 const timeList = document.querySelector('.time-list');
 
-const info = document.querySelector('.fa-question');
+const info = document.querySelector('.question');
 const modal = document.querySelector('.modal-shadow');
 const closeBtn = document.querySelector('.close');
 

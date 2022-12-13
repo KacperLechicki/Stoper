@@ -29,17 +29,28 @@
 		top: 6px;
 		right: 12px;
 		margin: 10px;
-		font-size: 1.6rem;
-		color: colors.$white;
-		cursor: pointer;
 
-		i {
-			margin: 0;
-			padding: 8px;
-			transition: color 0.2s;
+		button {
+			font-size: 1.6rem;
+			color: colors.$white;
+			background: none;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			outline: none;
 
-			&:hover {
-				color: colors.$firstColor;
+			i {
+				margin: 0;
+				padding: 8px;
+				transition: color 0.2s;
+
+				&:hover {
+					color: colors.$firstColor;
+				}
+			}
+
+			&:focus {
+				outline: 1px solid colors.$white;
 			}
 		}
 	}
