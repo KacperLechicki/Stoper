@@ -1,3 +1,5 @@
+==>https://kacperlechicki.github.io/Stoper/<==
+
 # Stoper
 
   stoper application made with javascript
