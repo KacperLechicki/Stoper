@@ -108,7 +108,7 @@ const showArchive = () => {
 
 	timesArray.forEach((time) => {
 		const newTime = document.createElement('li');
-		newTime.innerHTML = `Pomiar nr ${num}: <span> ${time} </span>`;
+		newTime.innerHTML = `Measurement nr ${num}: <span> ${time} </span>`;
 
 		timeList.appendChild(newTime);
 		num++;
