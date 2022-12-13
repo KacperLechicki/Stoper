@@ -72,10 +72,12 @@ const handlePause = () => {
 const handleStop = () => {
 	time.innerHTML = `Ostatni czas: ${stopwatch.textContent}`;
 
-	if (stopwatch !== '0:00') {
+	if (stopwatch.textContent !== '0:00') {
 		time.style.visibility = 'visible';
 
 		timesArray.push(stopwatch.textContent);
+	} else {
+		time.style.visibility = 'hidden';
 	}
 
 	clearInterval(countTime);
