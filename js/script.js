@@ -10,7 +10,7 @@
 const startBtn = document.querySelector('.start');
 const pauseBtn = document.querySelector('.pause');
 const stopBtn = document.querySelector('.stop');
-const clearBtn = document.querySelector('.times');
+const clearBtn = document.querySelector('.reset');
 const stopwatch = document.querySelector('.stopwatch');
 const archiveBtn = document.querySelector('.history');
 const time = document.querySelector('.time');
@@ -80,12 +80,39 @@ const handleStop = () => {
 		time.style.visibility = 'hidden';
 	}
 
-	clearInterval(countTime);
-	stopwatch.textContent = '0:00';
-	timeList.textContent = '';
+	clearStuff();
+};
 
+//reset wszystkich danych i wartości
+const handleClear = () => {
+	clearStuff();
+
+	timeList.textContent = '';
+	time.style.visibility = 'hidden';
+	timesArray = [];
+};
+
+const clearStuff = () => {
+	clearInterval(countTime);
+
+	stopwatch.textContent = '0:00';
+	// timeList.textContent = '';
 	seconds = 0;
 	minutes = 0;
+};
+
+//pokaż archiwum
+const showArchive = () => {
+	timeList.textContent = '';
+	let num = 1;
+
+	timesArray.forEach((time) => {
+		const newTime = document.createElement('li');
+		newTime.innerHTML = `Pomiar nr ${num}: <span> ${time} </span>`;
+
+		timeList.appendChild(newTime);
+		num++;
+	});
 };
 
 //INSTRUKCJE
@@ -113,6 +140,8 @@ const hideModal = () => {
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
+clearBtn.addEventListener('click', handleClear);
+archiveBtn.addEventListener('click', showArchive);
 
 //instrukcje
 info.addEventListener('click', showModal);
