@@ -12,10 +12,20 @@ html {
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   font-family: "Work Sans", sans-serif;
   font-size: 1.6rem;
-  background-image: radial-gradient(circle at center, #1b2845 30%, #274060);
+  background-image: radial-gradient(circle at center, #1b2845 40%, #162538);
+}
+
+.wrapper {
+  margin: 2vh auto;
+  width: clamp(200px, 90vw, 600px);
+  height: clamp(100px, 400px, 90vh);
+  background-image: linear-gradient(310deg, rgb(12, 13, 26), rgb(10, 11, 28));
+  border-radius: 12px;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.389);
 }/*# sourceMappingURL=main.css.map */

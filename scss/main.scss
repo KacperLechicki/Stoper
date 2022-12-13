@@ -1,2 +1,11 @@
 @use 'reset' as *;
 @use 'colors' as colors;
+
+.wrapper {
+	margin: 2vh auto;
+	width: clamp(200px, 90vw, 600px);
+	height: clamp(100px, 400px, 90vh);
+	background-image: colors.$stoper-background;
+	border-radius: 12px;
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.389);
+}
