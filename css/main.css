@@ -192,12 +192,12 @@ body {
   box-shadow: 0 0 12px royalblue;
 }
 .wrapper .colors .three {
-  background-color: lime;
-  box-shadow: 0 0 7px lime;
+  background-color: rgb(24, 182, 24);
+  box-shadow: 0 0 7px rgb(24, 182, 24);
   transition: box-shadow 0.2s;
 }
 .wrapper .colors .three:hover {
-  box-shadow: 0 0 12px lime;
+  box-shadow: 0 0 12px rgb(24, 182, 24);
 }
 .wrapper .showCircles {
   -webkit-animation: showCircles 0.8s ease-in forwards;
