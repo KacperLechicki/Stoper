@@ -78,7 +78,7 @@ const handlePause = () => {
 //zatrzymanie odliczania, zerowanie stopera, zerowanie zmiennych od minut i sekund
 //zapisywanie czasów różnych od zera do tablicy i wyświetlanie ostatniego czasu
 const handleStop = () => {
-	time.innerHTML = `Ostatni czas: ${stopwatch.textContent}`;
+	time.innerHTML = `Last measurement: ${stopwatch.textContent}`;
 
 	if (stopwatch.textContent !== '0:00') {
 		time.style.visibility = 'visible';
