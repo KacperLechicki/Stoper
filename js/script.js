@@ -78,7 +78,7 @@ const handlePause = () => {
 //zatrzymanie odliczania, zerowanie stopera, zerowanie zmiennych od minut i sekund
 //zapisywanie czasów różnych od zera do tablicy i wyświetlanie ostatniego czasu
 const handleStop = () => {
-	time.innerHTML = `Last measurement: ${stopwatch.textContent}`;
+	time.innerHTML = `Last time: ${stopwatch.textContent}`;
 
 	if (stopwatch.textContent !== '0:00') {
 		time.style.visibility = 'visible';
@@ -116,7 +116,7 @@ const showArchive = () => {
 
 	timesArray.forEach((time) => {
 		const newTime = document.createElement('li');
-		newTime.innerHTML = `Measurement nr ${num}: <span> ${time} </span>`;
+		newTime.innerHTML = `Time nr ${num}: <span> ${time} </span>`;
 
 		timeList.appendChild(newTime);
 		num++;
